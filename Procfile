@@ -1,1 +1,1 @@
-web: gunicorn orange-server.wsgi --log-file -
+web: gunicorn OrangeServer.wsgi --log-file -
