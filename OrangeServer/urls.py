@@ -8,6 +8,6 @@ urlpatterns = patterns('',
     # url(r'^$', 'OrangeServer.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'^tellMeAStory/', include('storyAgent.tellMeAStory')),
+    url(r'^tellMeAStory/$', storyAgent.tellMeAStory),
     url(r'^admin/', include(admin.site.urls)),
 )
