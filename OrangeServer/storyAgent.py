@@ -5,4 +5,4 @@ from django.views.decorators.csrf import csrf_exempt
 
 
 def tellMeAStory(request):
-	return HttpResponse(json.dumps({'tellMeAStory': 'Story'}), "application/json")
+	return HttpResponse(json.dumps({'tellMeAStory': 'Story1'}), "application/json")
