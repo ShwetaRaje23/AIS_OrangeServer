@@ -1,4 +1,3 @@
-
 class Action:
 
 	def __init__():

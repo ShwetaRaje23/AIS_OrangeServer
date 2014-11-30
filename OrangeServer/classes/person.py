@@ -3,6 +3,7 @@ class Person:
 	def __init__():
 		#Display oriented
 		self.name = ""
+		self.characterDescription = ""
 		self.motive = ""
 
 		#Story Oriented
