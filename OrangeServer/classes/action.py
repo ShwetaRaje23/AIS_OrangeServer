@@ -21,8 +21,23 @@ class Action:
 		#take a characterid and write his/her trajectory
 		#
 
-		action = 'See'
-		Action.isActionPreconditionSatisfied(action)
+		for characterid in range (1,6):
+			action = 'See'
+			if Action.isActionPreconditionSatisfied(action):
+				#pirnt the below and also add to the KB as clue
+				#print ('charater', characterid , 'did action', action, 'at' , time, 'in' locationid)
+			else:
+				#find out what is needed to get to satisfy the action (not always true) only when its a goal  
+
+
+			action = 'Hear'
+			Action.isActionPreconditionSatisfied(action)
+
+			action = 'Pick'
+			Action.isActionPreconditionSatisfied(action)
+
+			action = 'Walk'
+			Action.isActionPreconditionSatisfied(action)
 
 
 	#give preconditions based on the action performed in an if else loop
@@ -31,6 +46,10 @@ class Action:
 		if action == 'See':
 			#try to satisfy pre-conditions
 			print ("In see action")
+			# Here we need to code from the other classes like, Location here.
+			# these variables will be set from a global state of the world.
+			# The main classes will get updated as well as update the global state of the world
+			#
 			if object_in_location == True or person_in_location == True:
 				return True
 			else:
