@@ -13,17 +13,17 @@
 		{
 			"name":"Brother",
 			"characterid":3,
-			"characterDescription":"Thomas Capaldi, Governor Arnold's brother, is a  "
+			"characterDescription":"Thomas Capaldi, Governor Arnold's brother, is hot-headed and sincere but his efforts always seem to go un-noticed "
 		},
 		{
 			"name":"Maid",
 			"characterid":4,
-			"characterDescription":""
+			"characterDescription":"Their maid Marta has been working with the Capaldi's for about 8 years now. She loves gossip, but doesn't everyone? "
 		},
 		{
 			"name":"Secretary",
 			"characterid":5,
-			"characterDescription":""
+			"characterDescription":"Governor Arnold's secratary Julia loves attention. She knows a little too much about the Governor than his wife Lynda would like. "
 		}
 	],
 	"locations":[
