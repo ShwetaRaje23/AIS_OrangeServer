@@ -9,7 +9,7 @@ class Action:
 	# Does this person satisfy the preconditions of this action ?
 	# If not, tell the person to do those actions
 	# 
-	def isPreconditionSatisfied(person):
+	def isPreconditionSatisfied(self,person):
 		print ("Is Precondition Satisfied")
 		
 	def performAction(self):
@@ -20,24 +20,12 @@ class Action:
 
 		#take a characterid and write his/her trajectory
 		#
+		if action == 'See':
+			print "Action Performed successfully"
+			# return  [success, instance of knowledge base]
 
-		for characterid in range (1,6):
-			action = 'See'
-			if Action.isActionPreconditionSatisfied(action):
-				#pirnt the below and also add to the KB as clue
-				#print ('charater', characterid , 'did action', action, 'at' , time, 'in' locationid)
-			else:
-				#find out what is needed to get to satisfy the action (not always true) only when its a goal  
-
-
-			action = 'Hear'
-			Action.isActionPreconditionSatisfied(action)
-
-			action = 'Pick'
-			Action.isActionPreconditionSatisfied(action)
-
-			action = 'Walk'
-			Action.isActionPreconditionSatisfied(action)
+		print "Action was not performed successfully"
+		# return [fail, instacen of Goal]
 
 
 	#give preconditions based on the action performed in an if else loop
@@ -92,4 +80,5 @@ class Action:
 #		if action == 'Fight':	 add later
 			
 	def performEffectsForAction():
+
 		print ("Perform Effects For Action")
