@@ -1,9 +1,10 @@
 class Character:
 
-	def __init__(self):
+	def __init__(self, name, characterDescription, characterId):
 		#Display oriented
-		self.name = ""
-		self.characterDescription = ""
+		self.name = name
+		self.characterId = characterId
+		self.characterDescription = characterDescription
 		self.motive = ""
 
 		#Story Oriented
@@ -33,13 +34,17 @@ class Character:
 	# 		action = 'Walk'
 	# 		Action.isActionPreconditionSatisfied(action)
 
+
+	def getJSONFromKB(self):
+
+		return {"G":"G"}
+
 	def performAction(self,action):
 
 		#If is_preconfition_Satisfied()
 		#[success, ret] = action.performAction()
-
-
 		#Perform Effects of action
+
 		#If success, add ret to self.knowedge
 		#If success = false, add ret to goal
 		#Update local and global SOW

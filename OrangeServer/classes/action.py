@@ -1,8 +1,9 @@
 class Action:
 
-	def __init__(self):
+	def __init__(self, name, actionid):
 		#Display Related
-		self.name = ""
+		self.name = name
+		self.actionid = actionid
 		self.characters_involved = [] #Which characters were involved in this action
 
 	#

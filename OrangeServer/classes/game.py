@@ -10,18 +10,34 @@ class Game:
 	def tellMeAStory(self):
 		#this is where the input values will come into the code.
 
+		jsonResponse = []
+
 		#If stop condition not satisfied
+		if not self.isStopConditionSatisfied():
+			for character in self.characters:
+				character.doActionLoop()
+		else:
+			#After Stop Condition satisfied
+			for character in self.characters:
+				jsonResponse.append(character.getJSONFromKB())
 
-		#For each character
-		#character.doActionLoop()
+		#Add KB to response
+		jsonResponse['history'] = jsonResponse
 
-
-		#After Stop Condition satisfied
-		#For each Character
-		#Character.getJSONFromKnowledgeBase
 
 		#For parameter in game.SOW
 		#Add parameter to JSON
 
 		print ('Start Simulation')
 		return {'tellMeAStory': 'Story'}
+
+	def isStopConditionSatisfied(self):
+
+
+
+		return False
+
+
+#Temp
+game = Game()
+game.tellMeAStory()
