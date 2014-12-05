@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fbc82bc2-7304-4122-9350-c99f31826194" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OrangeServer/classes/game.py" afterPath="$PROJECT_DIR$/OrangeServer/classes/game.py" />
-    </list>
+    <list default="true" id="fbc82bc2-7304-4122-9350-c99f31826194" name="Default" comment="" />
     <ignored path="Orange-Server.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
