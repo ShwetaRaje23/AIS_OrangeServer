@@ -22,6 +22,11 @@ class Game:
 	def tellMeAStory(self):
 		#this is where the input values will come into the code.
 
+		module_dir = os.path.dirname(__file__)  # get current directory
+		file_path = os.path.join(module_dir, "output.json")
+		return open(file_path)
+
+
 		jsonResponse = []
 		responseDict = {}
 

@@ -198,12 +198,11 @@
                 4
             ],
             "performed_on": [
-                1
             ],
             "iteration": 1,
-            "location": 2,
+            "location": 4,
             "time": "9:00",
-            "performed_by": 1,
+            "performed_by": 4,
             "action_id": 1
         },
         {
@@ -222,228 +221,101 @@
         },
         {
             "objects_involved": [
-                8
+                5
             ],
-            "performed_on": [],
-            "iteration": 1,
+            "performed_on": [2,5],
+            "iteration": 2,
             "location": 6,
-            "time": "9:00",
+            "time": "10:00",
             "performed_by": 1,
-            "action_id": 1
+            "action_id": 2
         },
         {
             "objects_involved": [
-                2
-            ],
-            "performed_on": [
-                2,
-                3
-            ],
-            "iteration": 1,
-            "location": 5,
-            "time": "9:00",
-            "performed_by": 1,
-            "action_id": 1
-        },
-        {
-            "objects_involved": [
-                2,
                 6
             ],
             "performed_on": [
-                2,
-                3
-            ],
-            "iteration": 1,
-            "location": 5,
-            "time": "9:00",
-            "performed_by": 2,
-            "action_id": 1
-        },
-        {
-            "objects_involved": [
-                4
-            ],
-            "performed_on": [
-                1
-            ],
-            "iteration": 1,
-            "location": 2,
-            "time": "9:00",
-            "performed_by": 2,
-            "action_id": 1
-        },
-        {
-            "objects_involved": [
-                2
-            ],
-            "performed_on": [
-                2,
-                3
-            ],
-            "iteration": 1,
-            "location": 5,
-            "time": "9:00",
-            "performed_by": 2,
-            "action_id": 1
-        },
-        {
-            "objects_involved": [
-                2
-            ],
-            "performed_on": [
-                2,
-                3
-            ],
-            "iteration": 1,
-            "location": 5,
-            "time": "9:00",
-            "performed_by": 2,
-            "action_id": 1
-        },
-        {
-            "objects_involved": [
-                2
-            ],
-            "performed_on": [
-                2,
-                3
-            ],
-            "iteration": 1,
-            "location": 5,
-            "time": "9:00",
-            "performed_by": 3,
-            "action_id": 1
-        },
-        {
-            "objects_involved": [
-                2
-            ],
-            "performed_on": [
-                2,
-                3
-            ],
-            "iteration": 1,
-            "location": 5,
-            "time": "9:00",
-            "performed_by": 3,
-            "action_id": 1
-        },
-        {
-            "objects_involved": [
                 5,
-                8
-            ],
-            "performed_on": [],
-            "iteration": 1,
-            "location": 6,
-            "time": "9:00",
-            "performed_by": 3,
-            "action_id": 1
-        },
-        {
-            "objects_involved": [
-                2
-            ],
-            "performed_on": [
-                2,
                 3
             ],
-            "iteration": 1,
+            "iteration": 2,
             "location": 5,
-            "time": "9:00",
-            "performed_by": 3,
-            "action_id": 1
-        },
-        {
-            "objects_involved": [
-                1
-            ],
-            "performed_on": [
-                4
-            ],
-            "iteration": 1,
-            "location": 4,
-            "time": "9:00",
+            "time": "10:00",
             "performed_by": 4,
-            "action_id": 1
-        },
-        {
-            "objects_involved": [
-                4
-            ],
-            "performed_on": [
-                1
-            ],
-            "iteration": 1,
-            "location": 2,
-            "time": "9:00",
-            "performed_by": 4,
-            "action_id": 1
-        },
-        {
-            "objects_involved": [
-                4
-            ],
-            "performed_on": [
-                1
-            ],
-            "iteration": 1,
-            "location": 2,
-            "time": "9:00",
-            "performed_by": 4,
-            "action_id": 1
-        },
-        {
-            "objects_involved": [
-                2
-            ],
-            "performed_on": [
-                2,
-                3
-            ],
-            "iteration": 1,
-            "location": 5,
-            "time": "9:00",
-            "performed_by": 4,
-            "action_id": 1
-        },
-        {
-            "objects_involved": [
-                1
-            ],
-            "performed_on": [
-                4
-            ],
-            "iteration": 1,
-            "location": 4,
-            "time": "9:00",
-            "performed_by": 5,
-            "action_id": 1
-        },
-        {
-            "objects_involved": [
-                1
-            ],
-            "performed_on": [
-                4
-            ],
-            "iteration": 1,
-            "location": 4,
-            "time": "9:00",
-            "performed_by": 5,
-            "action_id": 1
+            "action_id": 2
         },
         {
             "objects_involved": [
                 7
             ],
-            "performed_on": [],
-            "iteration": 1,
-            "location": 3,
-            "time": "9:00",
-            "performed_by": 5,
+            "performed_on": [
+            ],
+            "iteration": 3,
+            "location": 5,
+            "time": "11:00",
+            "performed_by": 4,
+            "action_id": 3
+        },
+        {
+            "objects_involved": [
+                4
+            ],
+            "performed_on": [
+            ],
+            "iteration": 3,
+            "location": 2,
+            "time": "11:00",
+            "performed_by": 1,
+            "action_id": 3
+        },
+        {
+            "objects_involved": [
+                7
+            ],
+            "performed_on": [
+                1
+            ],
+            "iteration": 4,
+            "location": 5,
+            "time": "12:00",
+            "performed_by": 4,
+            "action_id": 5
+        },
+        {
+            "objects_involved": [
+            ],
+            "performed_on": [
+                4
+            ],
+            "iteration": 4,
+            "location": 5,
+            "time": "12:00",
+            "performed_by": 1,
+            "action_id": 8
+        },
+        {
+            "objects_involved": [
+            ],
+            "performed_on": [
+                1, 2
+            ],
+            "iteration": 5,
+            "location": 4,
+            "time": "1:00",
+            "performed_by": 4,
             "action_id": 1
+        },
+        {
+            "objects_involved": [
+            ],
+            "performed_on": [
+                2
+            ],
+            "iteration": 5,
+            "location": 4,
+            "time": "1:00",
+            "performed_by": 1,
+            "action_id": 8
         }
     ]
 }
