@@ -1,0 +1,449 @@
+{
+    "characters": [
+        {
+            "motive": "",
+            "name": "Governor",
+            "characterDescription": "Governor Arnold Capaldi has been running the small town of Amberlee for 3 years. He is known for his promiscuity and poor treatment of his employees.",
+            "characterid": 1
+        },
+        {
+            "motive": "",
+            "name": "Wife",
+            "characterDescription": "Governor Arnold's wife, Lynda is a kind, beautiful woman. She trained as a doctor but left a promising career to support her husband in his long campaigns.",
+            "characterid": 2
+        },
+        {
+            "motive": "",
+            "name": "Brother",
+            "characterDescription": "Thomas Capaldi, Governor Arnold's brother, is hot-headed and sincere but his efforts always seem to go un-noticed ",
+            "characterid": 3
+        },
+        {
+            "motive": "",
+            "name": "Maid",
+            "characterDescription": "Their maid Marta has been working with the Capaldi's for about 8 years now. She loves gossip, but doesn't everyone? ",
+            "characterid": 4
+        },
+        {
+            "motive": "",
+            "name": "Secretary",
+            "characterDescription": "Governor Arnold's secratary Julia loves attention. She knows a little too much about the Governor than his wife Lynda would like. ",
+            "characterid": 5
+        }
+    ],
+    "killer": 2,
+    "locations": [
+        {
+            "characters_in_loc": [
+                5
+            ],
+            "objects_in_loc": [],
+            "name": "Garden",
+            "adjacent": [
+                2,
+                3,
+                4
+            ],
+            "placeid": 1
+        },
+        {
+            "characters_in_loc": [
+                1
+            ],
+            "objects_in_loc": [
+                4
+            ],
+            "name": "Fountain",
+            "adjacent": [
+                4,
+                5,
+                8
+            ],
+            "placeid": 2
+        },
+        {
+            "characters_in_loc": [],
+            "objects_in_loc": [],
+            "name": "Garage",
+            "adjacent": [
+                1,
+                4,
+                7
+            ],
+            "placeid": 3
+        },
+        {
+            "characters_in_loc": [
+                4
+            ],
+            "objects_in_loc": [
+                1
+            ],
+            "name": "Bedroom",
+            "adjacent": [
+                1,
+                3,
+                7,
+                5
+            ],
+            "placeid": 4
+        },
+        {
+            "characters_in_loc": [
+                2,
+                3
+            ],
+            "objects_in_loc": [
+                2
+            ],
+            "name": "Library",
+            "adjacent": [
+                2,
+                7,
+                6,
+                8
+            ],
+            "placeid": 5
+        },
+        {
+            "characters_in_loc": [],
+            "objects_in_loc": [],
+            "name": "Kitchen",
+            "adjacent": [
+                7,
+                5,
+                8
+            ],
+            "placeid": 6
+        },
+        {
+            "characters_in_loc": [],
+            "objects_in_loc": [],
+            "name": "Living Room",
+            "adjacent": [
+                5,
+                6,
+                4
+            ],
+            "placeid": 7
+        },
+        {
+            "characters_in_loc": [],
+            "objects_in_loc": [],
+            "name": "Office",
+            "adjacent": [
+                2,
+                5,
+                6
+            ],
+            "placeid": 8
+        }
+    ],
+    "motive": "Governor picked up love letter between Wife and Secretary.",
+    "objects": [
+        {
+            "is_weapon": true,
+            "after_use": "Bloody Knife",
+            "name": "Knife",
+            "objectid": 1,
+            "is_used": false
+        },
+        {
+            "is_weapon": true,
+            "after_use": "Empty Bottle",
+            "name": "Poison",
+            "objectid": 2,
+            "is_used": false
+        },
+        {
+            "is_weapon": true,
+            "after_use": "Empty Twilight DVD Case",
+            "name": "Twilight DVD",
+            "objectid": 4,
+            "is_used": false
+        },
+        {
+            "is_weapon": false,
+            "after_use": null,
+            "name": "Love Letter",
+            "objectid": 5,
+            "is_used": false
+        },
+        {
+            "is_weapon": false,
+            "after_use": null,
+            "name": "Secret Document",
+            "objectid": 6,
+            "is_used": false
+        },
+        {
+            "is_weapon": false,
+            "after_use": null,
+            "name": "Lipstick Stained Glass",
+            "objectid": 7,
+            "is_used": false
+        },
+        {
+            "is_weapon": false,
+            "after_use": "Bloodstained Dishcloth",
+            "name": "Dishcloth",
+            "objectid": 8,
+            "is_used": false
+        }
+    ],
+    "victim": 1,
+    "history": [
+        {
+            "objects_involved": [
+                4
+            ],
+            "performed_on": [
+                1
+            ],
+            "iteration": 1,
+            "location": 2,
+            "time": "9:00",
+            "performed_by": 1,
+            "action_id": 1
+        },
+        {
+            "objects_involved": [
+                2
+            ],
+            "performed_on": [
+                2,
+                3
+            ],
+            "iteration": 1,
+            "location": 5,
+            "time": "9:00",
+            "performed_by": 1,
+            "action_id": 1
+        },
+        {
+            "objects_involved": [
+                8
+            ],
+            "performed_on": [],
+            "iteration": 1,
+            "location": 6,
+            "time": "9:00",
+            "performed_by": 1,
+            "action_id": 1
+        },
+        {
+            "objects_involved": [
+                2
+            ],
+            "performed_on": [
+                2,
+                3
+            ],
+            "iteration": 1,
+            "location": 5,
+            "time": "9:00",
+            "performed_by": 1,
+            "action_id": 1
+        },
+        {
+            "objects_involved": [
+                2,
+                6
+            ],
+            "performed_on": [
+                2,
+                3
+            ],
+            "iteration": 1,
+            "location": 5,
+            "time": "9:00",
+            "performed_by": 2,
+            "action_id": 1
+        },
+        {
+            "objects_involved": [
+                4
+            ],
+            "performed_on": [
+                1
+            ],
+            "iteration": 1,
+            "location": 2,
+            "time": "9:00",
+            "performed_by": 2,
+            "action_id": 1
+        },
+        {
+            "objects_involved": [
+                2
+            ],
+            "performed_on": [
+                2,
+                3
+            ],
+            "iteration": 1,
+            "location": 5,
+            "time": "9:00",
+            "performed_by": 2,
+            "action_id": 1
+        },
+        {
+            "objects_involved": [
+                2
+            ],
+            "performed_on": [
+                2,
+                3
+            ],
+            "iteration": 1,
+            "location": 5,
+            "time": "9:00",
+            "performed_by": 2,
+            "action_id": 1
+        },
+        {
+            "objects_involved": [
+                2
+            ],
+            "performed_on": [
+                2,
+                3
+            ],
+            "iteration": 1,
+            "location": 5,
+            "time": "9:00",
+            "performed_by": 3,
+            "action_id": 1
+        },
+        {
+            "objects_involved": [
+                2
+            ],
+            "performed_on": [
+                2,
+                3
+            ],
+            "iteration": 1,
+            "location": 5,
+            "time": "9:00",
+            "performed_by": 3,
+            "action_id": 1
+        },
+        {
+            "objects_involved": [
+                5,
+                8
+            ],
+            "performed_on": [],
+            "iteration": 1,
+            "location": 6,
+            "time": "9:00",
+            "performed_by": 3,
+            "action_id": 1
+        },
+        {
+            "objects_involved": [
+                2
+            ],
+            "performed_on": [
+                2,
+                3
+            ],
+            "iteration": 1,
+            "location": 5,
+            "time": "9:00",
+            "performed_by": 3,
+            "action_id": 1
+        },
+        {
+            "objects_involved": [
+                1
+            ],
+            "performed_on": [
+                4
+            ],
+            "iteration": 1,
+            "location": 4,
+            "time": "9:00",
+            "performed_by": 4,
+            "action_id": 1
+        },
+        {
+            "objects_involved": [
+                4
+            ],
+            "performed_on": [
+                1
+            ],
+            "iteration": 1,
+            "location": 2,
+            "time": "9:00",
+            "performed_by": 4,
+            "action_id": 1
+        },
+        {
+            "objects_involved": [
+                4
+            ],
+            "performed_on": [
+                1
+            ],
+            "iteration": 1,
+            "location": 2,
+            "time": "9:00",
+            "performed_by": 4,
+            "action_id": 1
+        },
+        {
+            "objects_involved": [
+                2
+            ],
+            "performed_on": [
+                2,
+                3
+            ],
+            "iteration": 1,
+            "location": 5,
+            "time": "9:00",
+            "performed_by": 4,
+            "action_id": 1
+        },
+        {
+            "objects_involved": [
+                1
+            ],
+            "performed_on": [
+                4
+            ],
+            "iteration": 1,
+            "location": 4,
+            "time": "9:00",
+            "performed_by": 5,
+            "action_id": 1
+        },
+        {
+            "objects_involved": [
+                1
+            ],
+            "performed_on": [
+                4
+            ],
+            "iteration": 1,
+            "location": 4,
+            "time": "9:00",
+            "performed_by": 5,
+            "action_id": 1
+        },
+        {
+            "objects_involved": [
+                7
+            ],
+            "performed_on": [],
+            "iteration": 1,
+            "location": 3,
+            "time": "9:00",
+            "performed_by": 5,
+            "action_id": 1
+        }
+    ]
+}

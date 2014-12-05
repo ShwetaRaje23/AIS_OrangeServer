@@ -58,7 +58,7 @@ class StateOfWorld:
 
 		for obj in objects:
 			randLoc = random.choice(self.locations)
-			randLoc.objects_in_loc.append(obj)
+			randLoc.objects_in_location.append(obj)
 
 		# for objectid in range(1,9):
 		# 	obj_in_location = random.randint(1,8)

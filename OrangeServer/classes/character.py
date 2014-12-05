@@ -52,6 +52,7 @@ class Character:
 				"objects_involved": piece["objects_involved"],
 				"location":piece["location"]
 			}
+			# print self.name ," did ", piece["action"], " at ", piece["location"]
 			myKnowledge.append(knowledge)
 		
 		return myKnowledge
@@ -59,8 +60,10 @@ class Character:
 	def performAction(self,action):
 
 		from game import Game
-		[success, ret] = action.actuallyPerformAction(Game.globalSOW.locations[0], [], [])
+
+		[success, ret] = action.actuallyPerformAction(self, self.current_location, self.current_location.objects_in_location, self.current_location.char_in_loc)
 		if success:
+			# print "--", ret["action"]
 			self.myKB.append(ret)
 		else:
 			self.goals.append(ret)
@@ -71,6 +74,7 @@ class Character:
 
 	def doActionLoop(self):
 		for action in self.all_actions:
+			# print self.name ,"perform action", action.name, " ",action.actionid
 			self.performAction(action)
 
 	def getJSON(self):
