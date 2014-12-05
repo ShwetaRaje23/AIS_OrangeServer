@@ -59,12 +59,11 @@ class Character:
 	def performAction(self,action):
 
 		from game import Game
-		if action.isActionPreconditionSatisfied(self,Game.globalSOW):
-			[success, ret] = action.actuallyPerformAction(Game.globalSOW.locations[0], [], [])
-			if success:
-				self.myKB.append(ret)
-			else:
-				self.goals.append(ret)
+		[success, ret] = action.actuallyPerformAction(Game.globalSOW.locations[0], [], [])
+		if success:
+			self.myKB.append(ret)
+		else:
+			self.goals.append(ret)
 
 		#[success, ret] = action.actuallyPerformAction()
 		#If success, add ret to self.knowedge if not walk, etc

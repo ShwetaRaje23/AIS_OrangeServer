@@ -45,6 +45,7 @@ class StateOfWorld:
 		for char in characters:
 			randLoc = random.choice(self.locations)
 			randLoc.char_in_loc.append(char)
+			char.current_location = randLoc
 		#
 		# for characterid in range(1,6):
 		# 	person_in_location = random.randint(1,8)
