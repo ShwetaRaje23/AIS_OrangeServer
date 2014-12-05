@@ -11,4 +11,12 @@ class Object:
 		#check if a person can pick a particular object or not. return bool. 
 		return True
 
+	def getJSON(self):
+		return {
+			"name":self.name,
+			"objectid":self.objectid,
+			"is_weapon":self.is_weapon,
+			"after_use":self.after_use,
+			"is_used":self.is_used
+		}
 
