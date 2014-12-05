@@ -8,7 +8,6 @@ from classes.game import Game
 #     def dispatch(self, *args, **kwargs):
 #         return super(MyView, self).dispatch(*args, **kwargs)
 
-@csrf_exempt
 def playermessage(request,fromplayer,toplayer):
 	return ""
 
@@ -19,4 +18,4 @@ def tellMeAStory(request):
 	Game.var = 0
 	jsonResponse = game.tellMeAStory()
 
-	return HttpResponse(json.dumps(jsonResponse), "application/json")
+	return HttpResponse(json.dumps(jsonResponse), content_type="application/json")
