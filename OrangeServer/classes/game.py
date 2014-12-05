@@ -24,7 +24,8 @@ class Game:
 
 		module_dir = os.path.dirname(__file__)  # get current directory
 		file_path = os.path.join(module_dir, "output.json")
-		return open(file_path)
+		import json
+		return json.load(open(file_path))
 
 
 		jsonResponse = []
