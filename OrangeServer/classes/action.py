@@ -54,22 +54,12 @@ class Action:
 				return False  #need to return an action and person pair (not for see)
 		 
 		if self.name == 'Hear':
-<<<<<<< HEAD
 		 	for location in player.current_location.adjecent:
 		 		for char in location.char_in_loc:
 		 			if len(char.things_to_tell)>0:
 		 				return True
 		 			else:
 		 				return False
-
-=======
-			for location in player.current_location.adjecent:
-				for char in location.char_in_loc:
-					if len(char.things_to_tell)>0:
-						return True
-			else:
-				return False
->>>>>>> 703248e292807e47f83229e1c2afd4a15f2821c2
 
 		if self.name == 'Pick':			
 			if len(player.current_location.objects_in_location) > 0:
@@ -89,11 +79,10 @@ class Action:
 			if len(player.things_to_tell)>0:
 				if len(player.current_location.char_in_loc)>0:
 					return True
-<<<<<<< HEAD
 		 	else:
 		 		return False
 
-		 if self.name == 'Kill':				# you need to know who the person to be killed is?
+		if self.name == 'Kill':				# you need to know who the person to be killed is?
 		 	if objis in player.inventory:
 		 		for objs in objis:
 		 			if obj.isWeapon == True:
@@ -103,13 +92,11 @@ class Action:
 		 						return True
 		 					else:
 		 						#Go to character_to_kill's location
-		 				if >0: 
-		 					return True
+		 						print ""
 		 				else:
-=======
+		 					print ""
 			else:
 				return False
->>>>>>> 703248e292807e47f83229e1c2afd4a15f2821c2
 
 		if self.name == 'Kill':				# you need to know who the person to be killed is?
 			if objis in player.inventory:

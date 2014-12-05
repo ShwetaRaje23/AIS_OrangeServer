@@ -53,7 +53,7 @@ class Character:
 				"location":piece["location"]
 			}
 			myKnowledge.append(knowledge)
-
+		
 		return myKnowledge
 
 	def performAction(self,action):
