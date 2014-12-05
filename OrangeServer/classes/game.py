@@ -12,10 +12,9 @@ class Game:
 		#Get input JSON
 		module_dir = os.path.dirname(__file__)  # get current directory
 		file_path = os.path.join(module_dir, "input.json")
-		[all_characters, all_objects, all_locations] = jsonParser.getGameParametersFromInputJSON(file_path)
+		[all_characters, all_objects, all_locations, all_actions] = jsonParser.getGameParametersFromInputJSON(file_path)
 
 		self.characters = all_characters
-
 		self.objects = all_objects
 		self.locations = all_locations
 		Game.globalSOW = StateOfWorld(all_locations,all_characters,all_objects) #Parse and return global SOW
@@ -49,6 +48,12 @@ class Game:
 		return responseDict
 
 	def isStopConditionSatisfied(self):
+
+		#If there is a murderer or victim
+		if Game.globalSOW.victim and Game.globalSOW.killer:
+			return True
+		return False
+
 
 		# print Game.var
 		if Game.var > 5:

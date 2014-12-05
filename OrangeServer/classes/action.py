@@ -31,53 +31,50 @@ class Action:
 		return [False, actionDict]
 
 	#give preconditions based on the action performed in an if else loop
-	def isActionPreconditionSatisfied(action):
-		return True
-		# if action == 'See':
-		# 	#try to satisfy pre-conditions
-		# 	print ("In see action")
-		# 	# Here we need to code from the other classes like, Location here.
-		# 	# these variables will be set from a global state of the world.
-		# 	# The main classes will get updated as well as update the global state of the world
-		# 	#
-		# 	if object_in_location or person_in_location:
-		# 		return True
-		# 	else:
-		# 		performAction('Walk')
+	def isActionPreconditionSatisfied(self,player,SOW):
+
+		# if self.name == 'See':
+		# 	object_in_location =
+		# 	return True
+		# 	# if object_in_location or person_in_location:
+		# 	# 	return True
+		# 	# else:
+		# 	# 	performAction('Walk')
         #
-		# if action == 'Hear':
+		# if self.name == 'Hear':
 		# 	if person_in_adjecent_room > 1 and has_something_to_say(person) == True:
 		# 		return True
 		# 	else:
 		# 		performAction('Walk')
         #
-		# if action == 'Pick':
+		# if self.name == 'Pick':
 		# 	if obj_in_location == True and obj_in_inventory == False:
 		# 		return True
 		# 	else:
 		# 		performAction('Walkto')
         #
-		# if action == 'Kill':
+		# if self.name == 'Kill':
 		# 	if has_object == True and isWeapon == True and person_in_location == True:
 		# 		return True
 		# 	else:
 		# 		return False
         #
-		# if action == 'Talk':
+		# if self.name == 'Talk':
 		# 	if has_something_to_say(person) == True and person_in_location == True:
 		# 		return True
 		# 	else:
 		# 		return False
         #
-		# if action == 'DropObject':
+		# if self.name == 'DropObject':
 		# 	if has_object == True and object_to_be_dropped == True:
 		# 		return True
 		# 	else:
 		# 		return False
         #
-		# if action == 'Walk':
+		# if self.name == 'Walk':
 		# 	return True
-        #
+
+        return True
 
 #		if action == 'Fight':	 add later
 			

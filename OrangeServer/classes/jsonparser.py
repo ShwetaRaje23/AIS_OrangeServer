@@ -2,6 +2,7 @@ import json
 from character import Character
 from object import Object
 from location import Location
+from action import Action
 
 class jsonParser:
 
@@ -14,16 +15,23 @@ class jsonParser:
 		characters = jsonData['characters']
 		locations = jsonData['locations']
 		objects = jsonData['objects']
+		actions = jsonData['actions']
 
 		all_characters = []
 		all_objects = []
 		all_locations = []
+		all_actions = []
+
+		for action in actions:
+			name = action['name']
+			actionid = action['actionid']
+			all_actions.append(Action(name,actionid))
 
 		for character in characters:
 			name = character['name']
 			charid = character['characterid']
 			charDesc = character['characterDescription']
-			all_characters.append(Character(name,charDesc,charid))
+			all_characters.append(Character(name,charDesc,charid,all_actions))
 
 		for location in locations:
 			name = location['name']
@@ -49,4 +57,4 @@ class jsonParser:
 
 			all_objects.append(Object(name,objectid,is_weapon,after_use))
 
-		return [all_characters, all_objects, all_locations]
+		return [all_characters, all_objects, all_locations, all_actions]

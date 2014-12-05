@@ -3,7 +3,7 @@ from action import Action
 
 class Character:
 
-	def __init__(self, name, characterDescription, characterId):
+	def __init__(self, name, characterDescription, characterId,all_actions=[]):
 		#Display oriented
 		self.name = name
 		self.characterId = characterId
@@ -16,8 +16,10 @@ class Character:
 		self.things_to_tell = []
 		self.myKB = []
 		self.goals = []
-		self.current_location = None
+		self.all_actions = all_actions
 
+		#Action Related
+		self.current_location = None
 
 		#initialize actions for character
 	# action = 'See'
@@ -37,45 +39,7 @@ class Character:
 	# 		action = 'Walk'
 	# 		Action.isActionPreconditionSatisfied(action)
 
-	@classmethod
-	def allActions(cls):
-		actions = []
-		for action in ['See','Hear','Pick']:
-			actions.append(Action(action,len(actions)))
-		return actions
-
 	def getJSONFromKB(self):
-
-		#Parse
-
-		# [
-		#	OUTPUT JSON STRUCTURE:
-		# 	{
-		# 		iteration: 1,
-		# 		time: "9:00"
-		# 		action_name: 'see',
-		# 		action_id: 2,
-		# 		performed_on: [1], #everyone but me
-		# 		performed_by: 2,
-		# 		objects_involved: [3],
-		# 		location:7
-		# 	}
-		# ]
-
-
-		'''
-			[
-				{
-					"action":action_object
-					"characters_involved":[character_object]
-					"objects_involved": [object_object]
-					"location":location_object
-					"display_string":"I spoke to ___ at ___"
-				}
-			]
-		'''
-
-		print "*******", len(self.myKB)
 		myKnowledge = []
 		for piece in self.myKB:
 			knowledge = {
@@ -95,7 +59,7 @@ class Character:
 	def performAction(self,action):
 
 		from game import Game
-		if action.isActionPreconditionSatisfied():
+		if action.isActionPreconditionSatisfied(self,Game.globalSOW):
 			[success, ret] = action.actuallyPerformAction(Game.globalSOW.locations[0], [], [])
 			if success:
 				self.myKB.append(ret)
@@ -107,8 +71,8 @@ class Character:
 		#If success = false, add ret to goal ret = [highest_level_action_to_perform, characters_involved]
 
 	def doActionLoop(self):
-		for action in Character.allActions():
-			self.performAction(action)
+		for action in self.all_actions:
+			self.performAction(action.name)
 
 	def getJSON(self):
 		return {
@@ -117,3 +81,31 @@ class Character:
 			"characterDescription":self.characterDescription,
 			"motive":self.motive
 		}
+
+		'''
+		[
+			OUTPUT JSON STRUCTURE:
+			{
+				iteration: 1,
+				time: "9:00"
+				action_name: 'see',
+				action_id: 2,
+				performed_on: [1], #everyone but me
+				performed_by: 2,
+				objects_involved: [3],
+				location:7
+			}
+		]
+
+
+
+			[
+				{
+					"action":action_object
+					"characters_involved":[character_object]
+					"objects_involved": [object_object]
+					"location":location_object
+					"display_string":"I spoke to ___ at ___"
+				}
+			]
+		'''
