@@ -45,6 +45,8 @@ class Game:
 		responseDict['killer'] = 2#self.globalSOW.killer.characterId
 		responseDict['motive'] = "Some motive text here"#self.globalSOW.killer.motive #"Maid found the love letter between Wife and Secretary. Wife and Maid fought. Wife had a change of heart (or Wife decides to kill Maid)"
 
+
+
 		return responseDict
 
 	def isStopConditionSatisfied(self):
