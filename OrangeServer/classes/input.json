@@ -142,12 +142,9 @@
 			"actionid":7
 
 		},
-		{
-			"name":"Fight",
-			"actionid":8
-		},
-
-		}
-
+	  {
+		"name": "Fight",
+		"actionid": 8
+	  }
 	]
 }

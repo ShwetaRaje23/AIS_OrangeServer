@@ -1,19 +1,20 @@
-from action import Action
 from stateofworld import StateOfWorld
 from jsonparser import jsonParser
 
 class Game:
 
 	var = 0
+	globalSOW = None
 
 	def __init__(self):
 
 		[all_characters, all_objects, all_locations] = jsonParser.getGameParametersFromInputJSON("input.json")
 
 		self.characters = all_characters
+
 		self.objects = all_objects
 		self.locations = all_locations
-		self.globalSOW = StateOfWorld(all_locations,all_characters,all_objects) #Parse and return global SOW
+		Game.globalSOW = StateOfWorld(all_locations,all_characters,all_objects) #Parse and return global SOW
 
 	def tellMeAStory(self):
 		#this is where the input values will come into the code.

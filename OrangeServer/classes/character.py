@@ -1,3 +1,6 @@
+from action import Action
+# from game import Game
+
 class Character:
 
 	def __init__(self, name, characterDescription, characterId):
@@ -11,7 +14,7 @@ class Character:
 		self.inventory = []
 		self.personality = []
 		self.things_to_tell = []
-		self.myKB = None
+		self.myKB = []
 		self.goals = []
 		self.current_location = None
 
@@ -34,6 +37,12 @@ class Character:
 	# 		action = 'Walk'
 	# 		Action.isActionPreconditionSatisfied(action)
 
+	@classmethod
+	def allActions(cls):
+		actions = []
+		for action in ['See','Hear','Pick']:
+			actions.append(Action(action,len(actions)))
+		return actions
 
 	def getJSONFromKB(self):
 
@@ -84,8 +93,10 @@ class Character:
 
 	def performAction(self,action):
 
+		from game import Game
 		if action.isActionPreconditionSatisfied():
-			[success, ret] = action.actuallyPerformAction()
+			print Game.globalSOW.locations
+			[success, ret] = action.actuallyPerformAction(Game.globalSOW.locations[0], [], [])
 			if success:
 				self.myKB.append(ret)
 			else:
@@ -98,7 +109,7 @@ class Character:
 		print "Perform Action"
 
 	def doActionLoop(self):
-		for action in ['See','Hear','Pick']:
+		for action in Character.allActions():
 			self.performAction(action)
 
 	def getJSON(self):
