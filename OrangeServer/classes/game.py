@@ -52,9 +52,9 @@ class Game:
 	def isStopConditionSatisfied(self):
 
 		#If there is a murderer or victim
-		if Game.globalSOW.victim and Game.globalSOW.killer:
-			return True
-		return False
+		# if Game.globalSOW.victim and Game.globalSOW.killer:
+		# 	return True
+		# return False
 
 
 		# print Game.var
