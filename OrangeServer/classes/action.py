@@ -55,8 +55,8 @@ class Action:
 		 		for char in location.char_in_loc:
 		 			if len(char.things_to_tell)>0:
 		 				return True
-		 	else:
-		 		return False
+		 			else:
+		 				return False
 
 
 		if self.name == 'Pick':			
@@ -78,7 +78,13 @@ class Action:
 		 	if objis in player.inventory:
 		 		for objs in objis:
 		 			if obj.isWeapon == True:
-		 				if len(characters_involved)>0: 
+		 				if len(characters_involved)>0:
+		 					character_to_kill = characters_involved[0]
+		 					if character_to_kill.current_location == player.current_location:
+		 						return True
+		 					else:
+		 						#Go to character_to_kill's location
+		 				if >0: 
 		 					return True
 		 				else:
 
@@ -139,7 +145,8 @@ class Action:
 
 #		if action == 'Fight':	 add later
 			
-	def performEffectsForAction(self):
+	def performEffectsForAction(self,player,SOW,location, objects, characters_involved):
+		
 		#Global state updated
 
 
