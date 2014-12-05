@@ -1,3 +1,5 @@
+import random
+
 class Location:
 
 	def __init__():
@@ -8,3 +10,8 @@ class Location:
  	
  	def update_from_SOW(self):
  		# needed to update from the sow at every instance to see who is where
+
+
+
+ 		
+ 		
