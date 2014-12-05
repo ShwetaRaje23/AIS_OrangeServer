@@ -32,7 +32,7 @@ class Action:
 
 	#give preconditions based on the action performed in an if else loop
 	def isActionPreconditionSatisfied(self,player,SOW):
-
+		return True
 		# if self.name == 'See':
 		# 	object_in_location =
 		# 	return True
@@ -74,7 +74,7 @@ class Action:
 		# if self.name == 'Walk':
 		# 	return True
 
-        return True
+        # return True
 
 #		if action == 'Fight':	 add later
 			
