@@ -17,22 +17,25 @@ class Action:
 					"location": location.placeid,
 					"display_string": "I " + self.name + "at" + location.name #"I spoke to ___ at ___"
 				}
+		return [True, actionDict]
 
-		if action.isActionPreconditionSatisfied(self,Game.globalSOW, location, objects, characters_involved):
-			if self.name == 'Fight':
-				probofaction = random.randint(0,1)
-				if probofaction == 1:
-					return [True,actionDict]
-				else:
-					return [False,actionDict]
-
-			if self.name == 'See':
-				return [True, actionDict]
-
-			return [False, actionDict]
-
-		else:
-
+		# from game import Game
+		# if self.isActionPreconditionSatisfied(Game.globalSOW, location, objects, characters_involved):
+		# 	if self.name == 'Fight':
+		# 		probofaction = random.randint(0,1)
+		# 		if probofaction == 1:
+		# 			return [True,actionDict]
+		# 		else:
+		# 			return [False,actionDict]
+        #
+		# 	if self.name == 'See':
+		# 		return [True, actionDict]
+        #
+		# 	return [False, actionDict]
+        #
+		# else:
+		# 	print "else"
+		# 	return [False, actionDict]
 
 
 	#give preconditions based on the action performed in an if else loop
@@ -41,16 +44,17 @@ class Action:
 
 		if self.name == 'See':
 			#does SOW have object in location?
-			if len(player.current_location.object_in_location) > 0: 
-				objis = player.current_location.object_in_location
+			if len(player.current_location.objects_in_location) > 0: 
+				objis = player.current_location.objects_in_location
 				return True
-			else if len(player.current_location.char_in_loc) > 1:
+			elif len(player.current_location.char_in_loc) > 1:
 				player = player.current_location.char_in_loc
 				return True
 			else:
 				return False  #need to return an action and person pair (not for see)
 		 
 		if self.name == 'Hear':
+<<<<<<< HEAD
 		 	for location in player.current_location.adjecent:
 		 		for char in location.char_in_loc:
 		 			if len(char.things_to_tell)>0:
@@ -58,19 +62,34 @@ class Action:
 		 			else:
 		 				return False
 
+=======
+			for location in player.current_location.adjecent:
+				for char in location.char_in_loc:
+					if len(char.things_to_tell)>0:
+						return True
+			else:
+				return False
+>>>>>>> 703248e292807e47f83229e1c2afd4a15f2821c2
 
 		if self.name == 'Pick':			
-		 	if len(player.current_location.object_in_location) > 0: 
-				objis = player.current_location.object_in_location
-		 		if objis in player.inventory == False: # how will you get the object detected?
-		 			return True
-		 	else:
-		 		return False
+			if len(player.current_location.objects_in_location) > 0:
+				for objis in player.current_location.objects_in_location:
+					if not objis in player.inventory:
+						if not objis.is_weapon:
+							player.inventory.append(objis)
+							player.current_location.objects_in_location.remove(objis)
+							break #pick one object only
+						else:
+							print "Need to handle is_weapon"
+				return True
+			else:
+				return False
         
-        if self.name == 'Talk':
+		if self.name == 'Talk':
 			if len(player.things_to_tell)>0:
 				if len(player.current_location.char_in_loc)>0:
 					return True
+<<<<<<< HEAD
 		 	else:
 		 		return False
 
@@ -87,10 +106,22 @@ class Action:
 		 				if >0: 
 		 					return True
 		 				else:
+=======
+			else:
+				return False
+>>>>>>> 703248e292807e47f83229e1c2afd4a15f2821c2
 
+		if self.name == 'Kill':				# you need to know who the person to be killed is?
+			if objis in player.inventory:
+				for obj in objis:
+					if obj.isWeapon == True:
+						if len(characters_involved)>0:
+							return True
+						else:
+							print "*"
 
-		 	else:
-		 		return False
+			else:
+				return False
 
 		# if self.name == 'DropObject':
 		#  	if has_object == True and object_to_be_dropped == True:
@@ -103,7 +134,7 @@ class Action:
 		 
 
 		# 	return True
-		# 	# if object_in_location or person_in_location:
+		# 	# if objects_in_location or person_in_location:
 		# 	# 	return True
 		# 	# else:
 		# 	# 	performAction('Walk')

@@ -67,11 +67,11 @@ class Character:
 
 		#[success, ret] = action.actuallyPerformAction()
 		#If success, add ret to self.knowedge if not walk, etc
-		#If success = false, add ret to goal ret = [highest_level_action_to_perform, characters_involved]
+		#If success = fa																																																							lse, add ret to goal ret = [highest_level_action_to_perform, characters_involved]
 
 	def doActionLoop(self):
 		for action in self.all_actions:
-			self.performAction(action.name)
+			self.performAction(action)
 
 	def getJSON(self):
 		return {
