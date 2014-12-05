@@ -18,7 +18,8 @@ class Action:
 					"display_string": "I " + self.name + "at" + location.name #"I spoke to ___ at ___"
 				}
 
-		if action.isActionPreconditionSatisfied(self,Game.globalSOW, location, objects, characters_involved):
+		from game import Game
+		if self.isActionPreconditionSatisfied(Game.globalSOW, location, objects, characters_involved):
 			if self.name == 'Fight':
 				probofaction = random.randint(0,1)
 				if probofaction == 1:
@@ -32,7 +33,7 @@ class Action:
 			return [False, actionDict]
 
 		else:
-
+			print "else"
 
 
 	#give preconditions based on the action performed in an if else loop
@@ -44,7 +45,7 @@ class Action:
 			if len(player.current_location.object_in_location) > 0: 
 				objis = player.current_location.object_in_location
 				return True
-			else if len(player.current_location.char_in_loc) > 1:
+			elif len(player.current_location.char_in_loc) > 1:
 				player = player.current_location.char_in_loc
 				return True
 			else:
