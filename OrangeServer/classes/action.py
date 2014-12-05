@@ -17,23 +17,25 @@ class Action:
 					"location": location.placeid,
 					"display_string": "I " + self.name + "at" + location.name #"I spoke to ___ at ___"
 				}
+		return [True, actionDict]
 
-		from game import Game
-		if self.isActionPreconditionSatisfied(Game.globalSOW, location, objects, characters_involved):
-			if self.name == 'Fight':
-				probofaction = random.randint(0,1)
-				if probofaction == 1:
-					return [True,actionDict]
-				else:
-					return [False,actionDict]
-
-			if self.name == 'See':
-				return [True, actionDict]
-
-			return [False, actionDict]
-
-		else:
-			print "else"
+		# from game import Game
+		# if self.isActionPreconditionSatisfied(Game.globalSOW, location, objects, characters_involved):
+		# 	if self.name == 'Fight':
+		# 		probofaction = random.randint(0,1)
+		# 		if probofaction == 1:
+		# 			return [True,actionDict]
+		# 		else:
+		# 			return [False,actionDict]
+        #
+		# 	if self.name == 'See':
+		# 		return [True, actionDict]
+        #
+		# 	return [False, actionDict]
+        #
+		# else:
+		# 	print "else"
+		# 	return [False, actionDict]
 
 
 	#give preconditions based on the action performed in an if else loop
@@ -42,8 +44,8 @@ class Action:
 
 		if self.name == 'See':
 			#does SOW have object in location?
-			if len(player.current_location.object_in_location) > 0: 
-				objis = player.current_location.object_in_location
+			if len(player.current_location.objects_in_location) > 0: 
+				objis = player.current_location.objects_in_location
 				return True
 			elif len(player.current_location.char_in_loc) > 1:
 				player = player.current_location.char_in_loc
@@ -59,12 +61,17 @@ class Action:
 			else:
 				return False
 
-
 		if self.name == 'Pick':			
-			if len(player.current_location.object_in_location) > 0:
-				objis = player.current_location.object_in_location
-				if objis in player.inventory == False: # how will you get the object detected?
-					return True
+			if len(player.current_location.objects_in_location) > 0:
+				for objis in player.current_location.objects_in_location:
+					if not objis in player.inventory:
+						if not objis.is_weapon:
+							player.inventory.append(objis)
+							player.current_location.objects_in_location.remove(objis)
+							break #pick one object only
+						else:
+							print "Need to handle is_weapon"
+				return True
 			else:
 				return False
         
@@ -98,7 +105,7 @@ class Action:
 		 
 
 		# 	return True
-		# 	# if object_in_location or person_in_location:
+		# 	# if objects_in_location or person_in_location:
 		# 	# 	return True
 		# 	# else:
 		# 	# 	performAction('Walk')
