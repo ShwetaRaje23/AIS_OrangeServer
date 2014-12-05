@@ -52,40 +52,40 @@ class Action:
 				return False  #need to return an action and person pair (not for see)
 		 
 		if self.name == 'Hear':
-		 	for location in player.current_location.adjecent:
-		 		for char in location.char_in_loc:
-		 			if len(char.things_to_tell)>0:
-		 				return True
-		 	else:
-		 		return False
+			for location in player.current_location.adjecent:
+				for char in location.char_in_loc:
+					if len(char.things_to_tell)>0:
+						return True
+			else:
+				return False
 
 
 		if self.name == 'Pick':			
-		 	if len(player.current_location.object_in_location) > 0: 
+			if len(player.current_location.object_in_location) > 0:
 				objis = player.current_location.object_in_location
-		 		if objis in player.inventory == False: # how will you get the object detected?
-		 			return True
-		 	else:
-		 		return False
+				if objis in player.inventory == False: # how will you get the object detected?
+					return True
+			else:
+				return False
         
-        if self.name == 'Talk':
+		if self.name == 'Talk':
 			if len(player.things_to_tell)>0:
 				if len(player.current_location.char_in_loc)>0:
 					return True
-		 	else:
-		 		return False
+			else:
+				return False
 
-		 if self.name == 'Kill':				# you need to know who the person to be killed is?
-		 	if objis in player.inventory:
-		 		for objs in objis:
-		 			if obj.isWeapon == True:
-		 				if len(characters_involved)>0: 
-		 					return True
-		 				else:
+		if self.name == 'Kill':				# you need to know who the person to be killed is?
+			if objis in player.inventory:
+				for obj in objis:
+					if obj.isWeapon == True:
+						if len(characters_involved)>0:
+							return True
+						else:
+							print "*"
 
-
-		 	else:
-		 		return False
+			else:
+				return False
 
 		# if self.name == 'DropObject':
 		#  	if has_object == True and object_to_be_dropped == True:
