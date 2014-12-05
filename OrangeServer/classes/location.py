@@ -1,3 +1,5 @@
+import random
+
 class Location:
 
 	def __init__(self, name, placeid, adjacent):
