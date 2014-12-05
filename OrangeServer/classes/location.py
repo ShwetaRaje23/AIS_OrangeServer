@@ -17,7 +17,7 @@ class Location:
 		return {
 			"name":self.name,
 			"placeid":self.placeid,
-			"adjacent":[loc.getJSON() for loc in self.adjacent],
-			"objects_in_loc":[obj.getJSON() for obj in self.objects_in_loc],
-			"characters_in_loc":[ch.getJSON() for ch in self.char_in_loc]
+			"adjacent":[loc.placeid for loc in self.adjacent],
+			"objects_in_loc":[obj.objectid for obj in self.objects_in_loc],
+			"characters_in_loc":[ch.characterId for ch in self.char_in_loc]
 		}

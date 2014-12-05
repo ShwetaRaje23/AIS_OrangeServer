@@ -9,9 +9,9 @@ class Action:
 		# self.characters_involved = [] #Which characters were involved in this action
 
 	def actuallyPerformAction(self, location, objects, characters_involved):
-		# print (" Loop to perform actions ")
+		# print "Actually "
 		actionDict = {
-					"action": self.name,
+					"action": self.actionid,
 					"characters_involved":[ch.characterId for ch in characters_involved],
 					"objects_involved": [obj.objectid for obj in objects],
 					"location": location.placeid,
@@ -28,6 +28,7 @@ class Action:
 		if self.name == 'See':
 			return [True, actionDict]
 
+		return [False, actionDict]
 
 	#give preconditions based on the action performed in an if else loop
 	def isActionPreconditionSatisfied(action):

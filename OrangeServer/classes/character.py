@@ -75,6 +75,7 @@ class Character:
 			]
 		'''
 
+		print "*******", len(self.myKB)
 		myKnowledge = []
 		for piece in self.myKB:
 			knowledge = {
@@ -95,7 +96,6 @@ class Character:
 
 		from game import Game
 		if action.isActionPreconditionSatisfied():
-			print Game.globalSOW.locations
 			[success, ret] = action.actuallyPerformAction(Game.globalSOW.locations[0], [], [])
 			if success:
 				self.myKB.append(ret)
@@ -105,8 +105,6 @@ class Character:
 		#[success, ret] = action.actuallyPerformAction()
 		#If success, add ret to self.knowedge if not walk, etc
 		#If success = false, add ret to goal ret = [highest_level_action_to_perform, characters_involved]
-
-		print "Perform Action"
 
 	def doActionLoop(self):
 		for action in Character.allActions():

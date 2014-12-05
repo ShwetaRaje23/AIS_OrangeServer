@@ -1,5 +1,6 @@
 from stateofworld import StateOfWorld
 from jsonparser import jsonParser
+import os
 
 class Game:
 
@@ -8,7 +9,10 @@ class Game:
 
 	def __init__(self):
 
-		[all_characters, all_objects, all_locations] = jsonParser.getGameParametersFromInputJSON("input.json")
+		#Get input JSON
+		module_dir = os.path.dirname(__file__)  # get current directory
+		file_path = os.path.join(module_dir, "input.json")
+		[all_characters, all_objects, all_locations] = jsonParser.getGameParametersFromInputJSON(file_path)
 
 		self.characters = all_characters
 
@@ -28,30 +32,31 @@ class Game:
 				character.doActionLoop()
 
 		#After Stop Condition satisfied
-		print "Number of Characters =" ,len(self.characters)
 		for character in self.characters:
-			jsonResponse.append(character.getJSONFromKB())
+			knowledge = character.getJSONFromKB()
+			for piece in knowledge:
+				jsonResponse.append(piece)
 
 		#Add KB to response
 		responseDict['history'] = jsonResponse
 		responseDict['locations'] = [loc.getJSON() for loc in self.locations]
 		responseDict['characters'] = [ch.getJSON() for ch in self.characters]
 		responseDict['objects'] = [obj.getJSON() for obj in self.objects]
-		responseDict['victim'] = self.globalSOW.victim.characterId
-		responseDict['killer'] = self.globalSOW.killer.characterId
-		responseDict['motive'] = self.globalSOW.killer.motive #"Maid found the love letter between Wife and Secretary. Wife and Maid fought. Wife had a change of heart (or Wife decides to kill Maid)"
+		responseDict['victim'] = 1#self.globalSOW.victim.characterId
+		responseDict['killer'] = 2#self.globalSOW.killer.characterId
+		responseDict['motive'] = "Some motive text here"#self.globalSOW.killer.motive #"Maid found the love letter between Wife and Secretary. Wife and Maid fought. Wife had a change of heart (or Wife decides to kill Maid)"
 
 		return responseDict
 
 	def isStopConditionSatisfied(self):
 
 		# print Game.var
-		if Game.var > 10:
+		if Game.var > 5:
 			return True
 		Game.var = Game.var+1
 		return False
 
 
 #Temp
-game = Game()
-game.tellMeAStory()
+# game = Game()
+# game.tellMeAStory()

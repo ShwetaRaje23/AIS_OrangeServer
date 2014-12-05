@@ -17,7 +17,7 @@ class StateOfWorld:
 		self.place_characters_randomly(all_characters)
 		self.place_objects_randomly(all_objects)
 
-		self.printSOW()
+		# self.printSOW()
 
 	def printSOW(self):
 		print "STATE OF THW WORLD"

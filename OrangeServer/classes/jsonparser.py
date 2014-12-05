@@ -23,8 +23,7 @@ class jsonParser:
 			name = character['name']
 			charid = character['characterid']
 			charDesc = character['characterDescription']
-
-			all_characters.append(Character(name,charid,charDesc))
+			all_characters.append(Character(name,charDesc,charid))
 
 		for location in locations:
 			name = location['name']

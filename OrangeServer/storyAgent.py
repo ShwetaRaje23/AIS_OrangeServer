@@ -8,6 +8,7 @@ from classes.game import Game
 def tellMeAStory(request):
 
 	game = Game()
+	Game.var = 0
 	jsonResponse = game.tellMeAStory()
 
 	return HttpResponse(json.dumps(jsonResponse), "application/json")
