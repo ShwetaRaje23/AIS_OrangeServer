@@ -1,4 +1,5 @@
 import json
+import random
 from character import Character
 from object import Object
 from location import Location
@@ -55,6 +56,9 @@ class jsonParser:
 			is_weapon = object['is_weapon']
 			after_use = object['after_use']
 
-			all_objects.append(Object(name,objectid,is_weapon,after_use))
+			obj = Object(name,objectid,is_weapon,after_use)
+			people_involved = random.sample(all_characters,2)
+			obj.people_involved = people_involved
+			all_objects.append(obj)
 
 		return [all_characters, all_objects, all_locations, all_actions]
