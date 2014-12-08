@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbc82bc2-7304-4122-9350-c99f31826194" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OrangeServer/classes/character.py" afterPath="$PROJECT_DIR$/OrangeServer/classes/character.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OrangeServer/classes/input.json" afterPath="$PROJECT_DIR$/OrangeServer/classes/input.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OrangeServer/urls.py" afterPath="$PROJECT_DIR$/OrangeServer/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OrangeServer/classes/game.py" afterPath="$PROJECT_DIR$/OrangeServer/classes/game.py" />
     </list>
     <ignored path="Orange-Server.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,17 +29,17 @@
       <file leaf-file-name="character.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OrangeServer/classes/character.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2412">
-              <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="231" max-vertical-offset="2412">
+              <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="messages.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="messages.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OrangeServer/classes/messages.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.407767" vertical-offset="0" max-vertical-offset="618">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
               <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
@@ -106,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="game.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/OrangeServer/classes/game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="1494">
-              <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.5057851" vertical-offset="414" max-vertical-offset="1548">
+              <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -159,11 +157,11 @@
         <option value="$PROJECT_DIR$/OrangeServer/classes/thingtotell.py" />
         <option value="$PROJECT_DIR$/OrangeServer/classes/goal.py" />
         <option value="$PROJECT_DIR$/OrangeServer/classes/action.py" />
-        <option value="$PROJECT_DIR$/OrangeServer/classes/game.py" />
         <option value="$PROJECT_DIR$/OrangeServer/classes/input.json" />
         <option value="$PROJECT_DIR$/OrangeServer/classes/character.py" />
         <option value="$PROJECT_DIR$/OrangeServer/urls.py" />
         <option value="$PROJECT_DIR$/OrangeServer/classes/messages.py" />
+        <option value="$PROJECT_DIR$/OrangeServer/classes/game.py" />
       </list>
     </option>
   </component>
@@ -929,24 +927,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OrangeServer/classes/game.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="1494">
-          <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OrangeServer/classes/character.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2412">
-          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OrangeServer/classes/input.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.0740743" vertical-offset="970" max-vertical-offset="2790">
@@ -977,10 +957,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/OrangeServer/classes/messages.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.407767" vertical-offset="0" max-vertical-offset="618">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OrangeServer/classes/character.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="231" max-vertical-offset="2412">
+          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OrangeServer/classes/game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5057851" vertical-offset="414" max-vertical-offset="1548">
+          <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>

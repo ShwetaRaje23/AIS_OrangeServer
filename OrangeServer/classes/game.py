@@ -32,9 +32,12 @@ class Game:
 				character.doActionLoop()
 
 		#After Stop Condition satisfied
+		clueId = 1
 		for character in self.characters:
 			knowledge = character.getJSONFromKB()
 			for piece in knowledge:
+				piece["clueId"] = clueId
+				clueId = clueId + 1
 				jsonResponse.append(piece)
 
 		#Add KB to response
