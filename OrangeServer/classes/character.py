@@ -24,10 +24,13 @@ class Character:
 
 	def getJSONFromKB(self):
 		myKnowledge = []
+		start_time = 9
+		iteration = 0
 		for piece in self.myKB:
+			iteration = iteration + 1
 			knowledge = {
-				"iteration": 1,
-				"time": "9:00",
+				"iteration": iteration,
+				"time": "%i:00"%(start_time+iteration),
 				# "action_name": 'see',
 				"action_id": piece["action"],
 				"performed_on": piece["characters_involved"], #everyone but me

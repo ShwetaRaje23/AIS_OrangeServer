@@ -106,10 +106,10 @@
 			"after_use":null
 		},
 		{
-			"name":"Dish",
+			"name":"Plan to Rob a Bank",
 			"objectid":8,
 			"is_weapon":false,
-			"after_use":"Bloodstained Dishcloth"
+			"after_use":null
 		}
 	],
 	"actions":[
