@@ -8,6 +8,7 @@ class StateOfWorld:
 
 		#Information about Game World
 		self.locations = all_locations
+		self.all_characters = all_characters
 
 		#Information about character roles
 		self.victim = None

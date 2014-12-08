@@ -1,5 +1,6 @@
 from action import Action
 # from game import Game
+import random
 
 class Character:
 
@@ -21,24 +22,6 @@ class Character:
 		#Action Related
 		self.current_location = None
 
-		#initialize actions for character
-	# action = 'See'
-	# 		if Action.isActionPreconditionSatisfied(action):
-	# 			#pirnt the below and also add to the KB as clue
-	# 			#print ('charater', characterid , 'did action', action, 'at' , time, 'in' locationid)
-	# 		else:
-	# 			#find out what is needed to get to satisfy the action (not always true) only when its a goal
-    #
-    #
-	# 		action = 'Hear'
-	# 		Action.isActionPreconditionSatisfied(action)
-    #
-	# 		action = 'Pick'
-	# 		Action.isActionPreconditionSatisfied(action)
-    #
-	# 		action = 'Walk'
-	# 		Action.isActionPreconditionSatisfied(action)
-
 	def getJSONFromKB(self):
 		myKnowledge = []
 		for piece in self.myKB:
@@ -52,30 +35,87 @@ class Character:
 				"objects_involved": piece["objects_involved"],
 				"location":piece["location"]
 			}
-			# print self.name ," did ", piece["action"], " at ", piece["location"]
 			myKnowledge.append(knowledge)
 		
 		return myKnowledge
 
 	def performAction(self,action):
 
-		from game import Game
-
 		[success, ret] = action.actuallyPerformAction(self, self.current_location, self.current_location.objects_in_location, self.current_location.char_in_loc)
 		if success:
-			# print "--", ret["action"]
 			self.myKB.append(ret)
-		else:
-			self.goals.append(ret)
-
-		#[success, ret] = action.actuallyPerformAction()
-		#If success, add ret to self.knowedge if not walk, etc
-		#If success = fa																																																							lse, add ret to goal ret = [highest_level_action_to_perform, characters_involved]
+		# else:
+		# 	self.goals.append(ret)
 
 	def doActionLoop(self):
+
 		for action in self.all_actions:
-			# print self.name ,"perform action", action.name, " ",action.actionid
-			self.performAction(action)
+			if not(action.name == 'Fight' or action.name == 'Kill'):
+				# print self.name ,"perform action", action.name, " ",action.actionid
+				self.performAction(action)
+
+		for goal in self.goals:
+
+			# print "I HAVE A GOAL TO", goal.action.name
+
+			if goal.action.name == 'Fight':
+				probofaction = random.randint(0,1)
+				shouldFight = True
+				if probofaction == 1:
+					shouldFight = True
+				else:
+					shouldFight = False
+
+				killaction = Action('Kill',4)
+				from goal import Goal
+
+				motiveString = self.name + " found the "+ goal.thing_to_tell.objs_involved[0].name+ " between "+ goal.people_involved[0].name + " and "+ goal.people_involved[1].name+"."
+				print "MOTIVE: ",motiveString
+
+				if shouldFight:
+					#Fight between self and character
+					print "Kill between",goal.people_involved[0].name, "and", self.name, "because of", [obj.name for obj in goal.thing_to_tell.objs_involved]
+					killer = goal.people_involved[0]
+					victim = self
+					killer.motive = motiveString
+					killer.goals.append(Goal(killaction,[victim],goal.thing_to_tell))
+
+				else:
+					killer = goal.people_involved[1]
+					victim = goal.people_involved[0]
+					killer.motive = motiveString + victim.name + " had a change of heart."
+					killer.goals.append(Goal(killaction,[victim],goal.thing_to_tell))
+					print "Kill between",goal.people_involved[0].name, "and", goal.people_involved[1].name, "because of", [obj.name for obj in goal.thing_to_tell.objs_involved]
+
+				self.goals.remove(goal)
+
+			elif goal.action.name == 'Kill':
+				killer = self
+				victim = goal.people_involved[0]
+
+				hasWeapon = False
+				for obj in self.inventory:
+					if obj.is_weapon:
+						hasWeapon = True
+						break
+
+				chars_in_locations = []
+				for char in self.current_location.char_in_loc:
+					chars_in_locations.append(char)
+				for adj in self.current_location.adjacent:
+					for char in adj.char_in_loc:
+						chars_in_locations.append(char)
+
+				if victim in chars_in_locations and hasWeapon:
+					from game import Game
+					Game.globalSOW.victim = victim
+					Game.globalSOW.killer = killer
+
+					print victim.name , killer.name
+					print "KILL !"
+					self.goals.remove(goal)
+					# exit(0)
+					return True
 
 	def getJSON(self):
 		return {
@@ -84,31 +124,3 @@ class Character:
 			"characterDescription":self.characterDescription,
 			"motive":self.motive
 		}
-
-		'''
-		[
-			OUTPUT JSON STRUCTURE:
-			{
-				iteration: 1,
-				time: "9:00"
-				action_name: 'see',
-				action_id: 2,
-				performed_on: [1], #everyone but me
-				performed_by: 2,
-				objects_involved: [3],
-				location:7
-			}
-		]
-
-
-
-			[
-				{
-					"action":action_object
-					"characters_involved":[character_object]
-					"objects_involved": [object_object]
-					"location":location_object
-					"display_string":"I spoke to ___ at ___"
-				}
-			]
-		'''

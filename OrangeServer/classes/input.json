@@ -113,6 +113,14 @@
 		}
 	],
 	"actions":[
+	  	{
+			"name":"Talk",
+			"actionid":5
+		},
+	  {
+		"name": "Fight",
+		"actionid": 8
+	  },
 		{
 			"name":"See",
 			"actionid":1
@@ -130,10 +138,6 @@
 			"actionid":4
 		},
 		{
-			"name":"Talk",
-			"actionid":5
-		},
-		{
 			"name":"DropObject",
 			"actionid":6
 		},
@@ -141,10 +145,6 @@
 			"name":"Walk",
 			"actionid":7
 
-		},
-	  {
-		"name": "Fight",
-		"actionid": 8
-	  }
+		}
 	]
 }

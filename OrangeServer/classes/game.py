@@ -27,6 +27,7 @@ class Game:
 
 		#If stop condition not satisfied
 		while not self.isStopConditionSatisfied():
+			print "STOP CONDITION NOT SATISFIED"
 			for character in self.characters:
 				character.doActionLoop()
 
@@ -41,9 +42,9 @@ class Game:
 		responseDict['locations'] = [loc.getJSON() for loc in self.locations]
 		responseDict['characters'] = [ch.getJSON() for ch in self.characters]
 		responseDict['objects'] = [obj.getJSON() for obj in self.objects]
-		responseDict['victim'] = 1#self.globalSOW.victim.characterId
-		responseDict['killer'] = 2#self.globalSOW.killer.characterId
-		responseDict['motive'] = "Some motive text here"#self.globalSOW.killer.motive #"Maid found the love letter between Wife and Secretary. Wife and Maid fought. Wife had a change of heart (or Wife decides to kill Maid)"
+		responseDict['victim'] = self.globalSOW.victim.characterId if self.globalSOW.victim else -1
+		responseDict['killer'] = self.globalSOW.killer.characterId if self.globalSOW.killer else -1
+		responseDict['motive'] = ""#self.globalSOW.killer.motive #"Maid found the love letter between Wife and Secretary. Wife and Maid fought. Wife had a change of heart (or Wife decides to kill Maid)"
 
 
 
@@ -51,17 +52,24 @@ class Game:
 
 	def isStopConditionSatisfied(self):
 
-		#If there is a murderer or victim
-		# if Game.globalSOW.victim and Game.globalSOW.killer:
-		# 	return True
-		# return False
-
-
-		# print Game.var
-		if Game.var > 5:
+		# print "CHECK STOP CONDITION", Game.globalSOW.killer.name if Game.globalSOW.killer else "",Game.globalSOW.victim.name if Game.globalSOW.victim else ""
+		if Game.globalSOW.killer is None:
+			if Game.var > 20:
+				print " ************************* "
+				return True
+			return False
+		else:
+			print " :):):):):):):):):):):):):):):):)"
 			return True
-		Game.var = Game.var+1
-		return False
+
+
+		#If there is a murderer or victim
+		# 	return False
+
+		# if Game.var > 20:
+		# 	return True
+		# Game.var = Game.var+1
+		# return False
 
 
 #Temp
