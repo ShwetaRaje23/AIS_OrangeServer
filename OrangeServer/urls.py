@@ -9,6 +9,8 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^tellMeAStory/$', storyAgent.tellMeAStory),
-    url(r'^talk/$', messages.talk),
+    url(r'^ask/$', messages.ask),
+    url(r'^answer/$', messages.answer),
+    url(r'^checkMessages/$', messages.checkMessages),
     url(r'^admin/', include(admin.site.urls)),
 )
