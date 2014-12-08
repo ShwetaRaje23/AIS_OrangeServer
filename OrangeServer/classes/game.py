@@ -44,7 +44,7 @@ class Game:
 		responseDict['objects'] = [obj.getJSON() for obj in self.objects]
 		responseDict['victim'] = self.globalSOW.victim.characterId if self.globalSOW.victim else -1
 		responseDict['killer'] = self.globalSOW.killer.characterId if self.globalSOW.killer else -1
-		responseDict['motive'] = ""#self.globalSOW.killer.motive #"Maid found the love letter between Wife and Secretary. Wife and Maid fought. Wife had a change of heart (or Wife decides to kill Maid)"
+		responseDict['motive'] = self.globalSOW.killer.motive #"Maid found the love letter between Wife and Secretary. Wife and Maid fought. Wife had a change of heart (or Wife decides to kill Maid)"
 
 
 
